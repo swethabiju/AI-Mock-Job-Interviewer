@@ -1,0 +1,102 @@
+[
+ {
+  "mode": "HR",
+  "seed": 1,
+  "answer": "um so in my last group project, i was supposed to submit the final slides and i thought another person had already added the references, so i didnt check properly and we submitted it with like barely any sources. the teacher pointed it out and i felt really bad because it was kinda my job to check the final thing before sending it. so after that i went back, fixed the references and told my group sorry, and now basically i always do a final check myself instead of just assuming someone else did it. it wasnt a huge disaster but yeah i learned that checking takes like five minutes and saves a lot of problems."
+ },
+ {
+  "mode": "HR",
+  "seed": 1,
+  "answer": "yeah, i made a mistake once with an assignment, i misunderstood what was being asked and then i had to redo it. i learned to read the instructions properly and not just start doing it immediately, um thats basically it."
+ },
+ {
+  "mode": "HR",
+  "seed": 2,
+  "answer": "in one college project, two people in my group wanted to do the presentation in completely different ways and it was getting a little tense, like both thought their way was better. i suggested we just combine the strongest parts of both ideas and split the presentation so each person could handle the section they were more comfortable with. then we talked through it and everyone agreed, so we could actually finish instead of arguing about it. i think it helped that nobody was really trying to say the other person was wrong, just, um, finding a middle thing."
+ },
+ {
+  "mode": "HR",
+  "seed": 2,
+  "answer": "we had a team project where there was a disagreement because some people wanted to finish quickly with a simple approach and others wanted to add more features. there was a lot of discussion and people were kind of talking over each other, but then we went through what was actually required and compared the two ideas, and eventually we decided on an approach that was simpler but still had the important parts. it made the discussion much calmer and everybody continued working together."
+ },
+ {
+  "mode": "HR",
+  "seed": 6,
+  "answer": "so basically there was this event in college where we had to make a small registration thing and nobody was really starting it, um, everyone was waiting for someone else i guess, and the deadline was getting close. i wasnt like officially in charge or anything but i just said okay ill make the first version and then you guys can tell me what to change, and then i made a rough form and a little sheet to keep track of names, and after that two other people started helping me with it because they could see what needed doing. we finished it before the event and it worked mostly fine, there was one small issue with duplicate names but we fixed that pretty quickly. so yeah i guess i just started because otherwise we were gonna keep talking and not do anything."
+ },
+ {
+  "mode": "HR",
+  "seed": 6,
+  "answer": "i just started doing the work instead of waiting for somebody else."
+ },
+ {
+  "mode": "HR",
+  "seed": 7,
+  "answer": "um i actually like playing badminton a lot, especially with my friends in the evening, and usually im not that good at first but after playing for a while i get into it and like sometimes we play for two hours without noticing. i also watch badminton videos and stuff, mostly highlights, and yeah its kinda relaxing after college."
+ },
+ {
+  "mode": "TECH",
+  "seed": 1,
+  "answer": "normalization is basically organizing database information so you dont keep storing the same thing again and again. like if a customer address is written in ten different rows, then if the address changes you have to change all ten, and thats where mistakes happen. so you split things into related tables in a sensible way and connect them, which makes updating and keeping the data correct easier."
+ },
+ {
+  "mode": "TECH",
+  "seed": 1,
+  "answer": "redundancy anomalies normal forms"
+ },
+ {
+  "mode": "TECH",
+  "seed": 1,
+  "answer": "normalization is used to make the database bigger and keep extra copies of data, and i think its also kind of a way to encrypt sensitive information so random people cant read it."
+ },
+ {
+  "mode": "TECH",
+  "seed": 1,
+  "answer": "idk"
+ },
+ {
+  "mode": "TECH",
+  "seed": 2,
+  "answer": "an abstract class is like a class that can have some actual code and data in it, but also can leave some methods unfinished for the child classes to do. an interface is more like a contract, it says what methods a class should have, without being the main class itself. um, depending on the language interfaces can have some implementation too now, but generally thats the difference i remember."
+ },
+ {
+  "mode": "TECH",
+  "seed": 2,
+  "answer": "an abstract class is a class where you can have methods that arent implemented yet, and subclasses have to do those parts. thats the main thing i know, i dont remember the interface side very well."
+ },
+ {
+  "mode": "TECH",
+  "seed": 2,
+  "answer": "an interface is basically a class that already contains the full implementation, while an abstract class is only for declaring variables and it cant have methods, so the interface does most of the actual work."
+ },
+ {
+  "mode": "TECH",
+  "seed": 4,
+  "answer": "so an abstract class and an interface are both used when you kind of want different classes to follow some common structure, but they arent exactly the same. an abstract class can have normal methods with code in them, fields or state, and also abstract methods where you basically say this needs to exist but the subclass has to implement it. so you use it when the classes are pretty closely related and you want to share some common behavior. an interface is more like saying okay, anything that implements this has to provide these operations, and it usually doesnt represent the shared state of the objects. also in some languages interfaces can have default methods now so the old explanation that they can never contain code isnt always true. i think the big idea is abstract class is more of a shared base with some implementation, interface is more like a capability or contract, and a class can often implement multiple interfaces whereas inheritance from classes is more restricted depending on the language."
+ },
+ {
+  "mode": "CODE",
+  "seed": 1,
+  "answer": "```python\ndef max_subarray(nums):\n    current = best = nums[0]\n    for x in nums[1:]:\n        current = max(x, current + x)\n        best = max(best, current)\n    return best\n```"
+ },
+ {
+  "mode": "CODE",
+  "seed": 1,
+  "answer": "```python\ndef max_subarray(nums):\n    current = best = 0\n    for x in nums:\n        current = max(0, current + x)\n        best = max(best, current)\n    return best\n```"
+ },
+ {
+  "mode": "CODE",
+  "seed": 2,
+  "answer": "```python\ndef is_palindrome(s):\n    s = ''.join(c.lower() for c in s if c.isalnum())\n    return s == s[::-1\n```"
+ },
+ {
+  "mode": "CODE",
+  "seed": 3,
+  "answer": "```python\ndef fizzbuzz_list(n):\n    result = []\n    for i in range(1, n + 1):\n        if i % 15 == 0:\n            result.append(\"FizzBuzz\")\n        elif i % 3 == 0:\n            result.append(\"Fizz\")\n        elif i % 5 == 0:\n            result.append(\"Buzz\")\n        else:\n            result.append(str(i))\n    return result\n```"
+ },
+ {
+  "mode": "CODE",
+  "seed": 3,
+  "answer": "i would use a loop and check modulo"
+ }
+]
