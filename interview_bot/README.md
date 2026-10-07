@@ -1,9 +1,18 @@
 # Mock Job Interviewer (HR + Technical + Coding) - fine-tuned Qwen2.5-1.5B
 
-A chatbot that runs three kinds of practice interviews. The model is **fine-tuned by you** (QLoRA); no API is called.
-
+A chatbot that runs three kinds of practice interviews: HR, Technical, and Coding. The language model is fine-tuned using QLoRA on Qwen2.5-1.5B-Instruct; no external LLM API is called.
 **Design in one line:** code does the checking (STAR markers, key-point checks, unit tests, scores); the fine-tuned LLM
 is the conversational policy (right action tag, one question per turn, correct hint level, no code leaks, valid scorecard JSON).
+## Trained Model
+
+The project uses a QLoRA fine-tuned adapter based on **Qwen2.5-1.5B-Instruct**.
+
+The trained adapter is available on Hugging Face:
+
+**Hugging Face Model:**  
+https://huggingface.co/swethabiju/AI-Mock-Job-Interviewer-QLoRA
+
+The repository contains the trained LoRA adapter weights, configuration, tokenizer files, and chat template.
 
 ## Run it (Google Colab)
 1. Colab -> **Runtime -> Change runtime type -> T4 GPU**. (Default is CPU. Training on CPU will not finish.)
@@ -24,13 +33,17 @@ is the conversational policy (right action tag, one question per turn, correct h
 | `app.py` | Gradio app |
 | `01_train.ipynb`, `02_eval.ipynb` | Training and evaluation |
 
-## Honest status
-- **Verified in my sandbox:** data generator, all 10 coding problems (reference passes, both bugs fail), code runner including
-  infinite loops and syntax errors, metrics (gold scores 100%, a deliberately bad reply scores ~0%), full interview flow in all three
-  modes over 60 seeds each, notebook syntax.
-- **NOT verified:** the real training and evaluation run (my sandbox has no GPU or internet), and current Colab library versions.
-  If a cell errors, paste the traceback back and it is usually a one-line fix.
-- **No results are included.** Your numbers come from your run. Do not write any accuracy figure in the report that is not in your `results.csv`.
+## Evaluation Status
+
+- **Training completed:** QLoRA fine-tuning was successfully completed on a Colab T4 GPU.
+- **Held-out evaluation completed:** 626 test turns were evaluated using the base and fine-tuned models.
+- **Failure analysis completed:** 1 problematic turn was identified out of 626 evaluated turns.
+- **Handwritten testing completed:** 20 manually written test cases were evaluated.
+- **Live application testing completed:** HR, Technical, and Coding interview flows were tested through the Gradio application.
+- **Coding mode tested:** correct solutions, failed solutions, the three-level hint ladder, and complexity follow-up were tested.
+- Exact metric values are reported from the generated evaluation results rather than being manually estimated.
+
+The training data was generated programmatically from seed banks, and AI assistance was used during development of the project code and documentation.
 
 ## Held-out test design
 Test conversations use questions/problems the model never saw in training (2 HR questions, 3 technical questions,
@@ -48,3 +61,9 @@ answers (last section of `02_eval.ipynb`) and report them separately.
 - **Colab disconnects:** the last training cell copies `adapter/` to your Google Drive; re-run `02_eval` after copying it back.
 - **Evaluation too slow:** set `LIMIT = 150` in the eval notebook for a quick pass, then run the full set later.
 - **Library version error:** paste the full traceback to your assistant.
+
+## Project Resources
+
+- **Source code, notebooks, evaluation scripts, and documentation:** GitHub
+- **Trained QLoRA adapter:** Hugging Face
+- **Complete project backup:** ZIP archive containing the project and trained adapter
